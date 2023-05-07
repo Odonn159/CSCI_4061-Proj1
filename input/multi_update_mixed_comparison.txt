@@ -1,0 +1,11 @@
+$ tar -xvf test.tar
+$ diff -q large.bin test_cases/resources/large.bin
+$ diff -q f19.txt test_cases/resources/f19.txt
+$ diff -q f7.bin test_cases/resources/f7.bin
+$ rm -rf test_files/
+$ mkdir test_files
+$ mv large.bin test_files/
+$ mv f19.txt test_files/
+$ mv f7.bin test_files/
+$ rm -f f8.bin f9.txt
+$ exit

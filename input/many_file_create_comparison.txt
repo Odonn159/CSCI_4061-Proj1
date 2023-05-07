@@ -1,0 +1,48 @@
+$ tar -xvf test.tar
+$ diff -q hello.txt test_cases/resources/hello.txt
+$ diff -q gatsby.txt test_cases/resources/gatsby.txt
+$ diff -q f1.txt test_cases/resources/f1.txt
+$ diff -q f1.bin test_cases/resources/f1.bin
+$ diff -q f2.txt test_cases/resources/f2.txt
+$ diff -q f2.bin test_cases/resources/f2.bin
+$ diff -q f3.txt test_cases/resources/f3.txt
+$ diff -q f3.bin test_cases/resources/f3.bin
+$ diff -q f4.txt test_cases/resources/f4.txt
+$ diff -q f4.bin test_cases/resources/f4.bin
+$ diff -q f5.txt test_cases/resources/f5.txt
+$ diff -q f5.bin test_cases/resources/f5.bin
+$ diff -q f6.txt test_cases/resources/f6.txt
+$ diff -q f6.bin test_cases/resources/f6.bin
+$ diff -q f7.txt test_cases/resources/f7.txt
+$ diff -q f7.bin test_cases/resources/f7.bin
+$ diff -q f8.txt test_cases/resources/f8.txt
+$ diff -q f8.bin test_cases/resources/f8.bin
+$ diff -q f9.txt test_cases/resources/f9.txt
+$ diff -q f9.bin test_cases/resources/f9.bin
+$ diff -q f10.txt test_cases/resources/f10.txt
+$ diff -q f10.bin test_cases/resources/f10.bin
+$ rm -rf test_files/
+$ mkdir test_files
+$ mv hello.txt test_files/
+$ mv gatsby.txt test_files/
+$ mv f1.txt test_files/
+$ mv f1.bin test_files/
+$ mv f2.txt test_files/
+$ mv f2.bin test_files/
+$ mv f3.txt test_files/
+$ mv f3.bin test_files/
+$ mv f4.txt test_files/
+$ mv f4.bin test_files/
+$ mv f5.txt test_files/
+$ mv f5.bin test_files/
+$ mv f6.txt test_files/
+$ mv f6.bin test_files/
+$ mv f7.txt test_files/
+$ mv f7.bin test_files/
+$ mv f8.txt test_files/
+$ mv f8.bin test_files/
+$ mv f9.txt test_files/
+$ mv f9.bin test_files/
+$ mv f10.txt test_files/
+$ mv f10.bin test_files/
+$ exit

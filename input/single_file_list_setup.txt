@@ -1,0 +1,2 @@
+$ cp test_cases/resources/hello.txt .
+$ exit

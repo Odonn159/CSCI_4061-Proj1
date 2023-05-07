@@ -1,0 +1,10 @@
+$ cp test_cases/resources/f11.txt .
+$ cp test_cases/resources/f13.txt .
+$ cp test_cases/resources/f15.txt .
+$ cp test_cases/resources/f17.txt .
+$ cp test_cases/resources/f12.txt .
+$ cp test_cases/resources/f14.txt .
+$ cp test_cases/resources/f15.bin .
+$ cp test_cases/resources/f17.bin .
+$ exit
+exit

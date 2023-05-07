@@ -1,0 +1,8 @@
+$ tar -xvf test.tar
+f1.txt
+$ diff -q f1.txt test_cases/resources/f1.txt
+$ rm -rf test_files/
+$ mkdir test_files
+$ mv f1.txt test_files/
+$ exit
+exit

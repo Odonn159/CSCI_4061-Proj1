@@ -1,0 +1,4 @@
+$ cp test_cases/resources/f2.txt f1.txt
+$ cp test_cases/resources/f6.txt f5.txt
+$ cp test_cases/resources/f8.bin f7.bin
+$ exit

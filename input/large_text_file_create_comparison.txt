@@ -1,0 +1,6 @@
+$ tar -xvf test.tar
+$ diff -q gatsby.txt test_cases/resources/gatsby.txt
+$ rm -rf test_files/
+$ mkdir test_files
+$ mv gatsby.txt test_files/
+$ exit

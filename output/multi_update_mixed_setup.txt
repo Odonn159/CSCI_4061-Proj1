@@ -1,0 +1,8 @@
+$ cp test_cases/resources/large.bin .
+$ cp test_cases/resources/f19.txt .
+$ cp test_cases/resources/f7.bin .
+$ cp test_cases/resources/f19.txt .
+$ cp test_cases/resources/f8.bin .
+$ cp test_cases/resources/f7.bin .
+$ exit
+exit

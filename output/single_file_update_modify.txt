@@ -1,0 +1,3 @@
+$ cp test_cases/resources/f12.bin f11.bin
+$ exit
+exit

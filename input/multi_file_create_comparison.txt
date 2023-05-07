@@ -1,0 +1,8 @@
+$ tar -xvf test.tar
+$ diff -q hello.txt test_cases/resources/hello.txt
+$ diff -q f2.bin test_cases/resources/f2.bin
+$ rm -rf test_files/
+$ mkdir test_files
+$ mv hello.txt test_files/
+$ mv f2.bin test_files/
+$ exit

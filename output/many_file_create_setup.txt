@@ -1,0 +1,24 @@
+$ cp test_cases/resources/hello.txt .
+$ cp test_cases/resources/gatsby.txt .
+$ cp test_cases/resources/f1.txt .
+$ cp test_cases/resources/f1.bin .
+$ cp test_cases/resources/f2.txt .
+$ cp test_cases/resources/f2.bin .
+$ cp test_cases/resources/f3.txt .
+$ cp test_cases/resources/f3.bin .
+$ cp test_cases/resources/f4.txt .
+$ cp test_cases/resources/f4.bin .
+$ cp test_cases/resources/f5.txt .
+$ cp test_cases/resources/f5.bin .
+$ cp test_cases/resources/f6.txt .
+$ cp test_cases/resources/f6.bin .
+$ cp test_cases/resources/f7.txt .
+$ cp test_cases/resources/f7.bin .
+$ cp test_cases/resources/f8.txt .
+$ cp test_cases/resources/f8.bin .
+$ cp test_cases/resources/f9.txt .
+$ cp test_cases/resources/f9.bin .
+$ cp test_cases/resources/f10.txt .
+$ cp test_cases/resources/f10.bin .
+$ exit
+exit

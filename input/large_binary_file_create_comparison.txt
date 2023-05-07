@@ -1,0 +1,6 @@
+$ tar -xvf test.tar
+$ diff -q large.bin test_cases/resources/large.bin
+$ rm -rf test_files/
+$ mkdir test_files
+$ mv large.bin test_files/
+$ exit

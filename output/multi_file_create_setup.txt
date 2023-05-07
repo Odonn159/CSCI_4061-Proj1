@@ -1,0 +1,4 @@
+$ cp test_cases/resources/hello.txt .
+$ cp test_cases/resources/f2.bin .
+$ exit
+exit

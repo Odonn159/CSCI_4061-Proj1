@@ -1,0 +1,13 @@
+$ tar -xvf test.tar
+$ diff -q f11.txt test_cases/resources/f11.txt
+$ diff -q f13.txt test_cases/resources/f13.txt
+$ diff -q f15.bin test_cases/resources/f15.bin
+$ diff -q f17.bin test_cases/resources/f17.bin
+$ rm -rf test_files/
+$ mkdir test_files
+$ mv f11.txt test_files/
+$ mv f13.txt test_files/
+$ mv f15.bin test_files/
+$ mv f17.bin test_files/
+$ rm -f f12.txt f14.txt f15.bin f17.bin f15.txt f17.txt
+$ exit
