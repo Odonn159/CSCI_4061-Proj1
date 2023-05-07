@@ -1,0 +1,1046 @@
+{
+    "name": "Project 01",
+    "tests": [
+        {
+            "type" :"sequence",
+            "name": "Create Single File Archive",
+            "description": "Creates an archive from one text file. Uses 'tar' to extract from the new archive and checks that all extracted files match the original versions.",
+            "tests": [
+                {
+                    "name": "File Setup",
+                    "description": "Copies files to be archived into current directory",
+                    "input_file": "test_cases/input/single_file_create_setup.txt",
+                    "output_file": "test_cases/output/single_file_create_setup.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Creation",
+                    "description": "Create an archive using 'minitar'",
+                    "command": "./minitar -c -f test.tar f1.txt",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/empty.txt",
+                    "points": 0
+                },
+                {
+                    "name": "File Comparison",
+                    "description": "Compare files extracted from archive using 'tar' with the original versions.",
+                    "output_file": "test_cases/output/single_file_create_comparison.txt",
+                    "input_file": "test_cases/input/single_file_create_comparison.txt",
+                    "points": 1
+                }
+            ],
+            "steps": [
+                [
+                    {
+                        "type": "run",
+                        "target": "File Setup"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Creation"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "File Comparison"
+                    }
+                ]
+            ]
+        },
+        {
+            "type" :"sequence",
+            "name": "Create Single Binary File Archive",
+            "description": "Creates an archive from one binary file. Uses 'tar' to extract from the new archive and checks that all extracted files match the original versions.",
+            "tests": [
+                {
+                    "name": "File Setup",
+                    "description": "Copies files to be archived into current directory",
+                    "input_file": "test_cases/input/single_binary_file_create_setup.txt",
+                    "output_file": "test_cases/output/single_binary_file_create_setup.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Creation",
+                    "description": "Create an archive using 'minitar'",
+                    "command": "./minitar -c -f test.tar f1.bin",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/empty.txt",
+                    "points": 0
+                },
+                {
+                    "name": "File Comparison",
+                    "description": "Compare files extracted from archive using 'tar' with the original versions.",
+                    "output_file": "test_cases/output/single_binary_file_create_comparison.txt",
+                    "input_file": "test_cases/input/single_binary_file_create_comparison.txt",
+                    "points": 1
+                }
+            ],
+            "steps": [
+                [
+                    {
+                        "type": "run",
+                        "target": "File Setup"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Creation"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "File Comparison"
+                    }
+                ]
+            ]
+        },
+        {
+            "type" :"sequence",
+            "name": "Create Multi-File Archive",
+            "description": "Creates an archive from one text file and one binary file. Uses 'tar' to extract from the new archive and checks that all extracted files match the original versions.",
+            "tests": [
+                {
+                    "name": "File Setup",
+                    "description": "Copies files to be archived into current directory",
+                    "input_file": "test_cases/input/multi_file_create_setup.txt",
+                    "output_file": "test_cases/output/multi_file_create_setup.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Creation",
+                    "description": "Create an archive using 'minitar'",
+                    "command": "./minitar -c -f test.tar hello.txt f2.bin",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/empty.txt",
+                    "points": 0
+                },
+                {
+                    "name": "File Comparison",
+                    "description": "Compare files extracted from archive using 'tar' with the original versions.",
+                    "output_file": "test_cases/output/multi_file_create_comparison.txt",
+                    "input_file": "test_cases/input/multi_file_create_comparison.txt",
+                    "points": 1
+                }
+            ],
+            "steps": [
+                [
+                    {
+                        "type": "run",
+                        "target": "File Setup"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Creation"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "File Comparison"
+                    }
+                ]
+            ]
+        },
+        {
+            "type" :"sequence",
+            "name": "Create Archive - Large Text File",
+            "description": "Creates an archive from a single very large text file. Uses 'tar' to extract from the new archive and checks that all extracted files match the original versions.",
+            "tests": [
+                {
+                    "name": "File Setup",
+                    "description": "Copies files to be archived into current directory",
+                    "input_file": "test_cases/input/large_text_file_create_setup.txt",
+                    "output_file": "test_cases/output/large_text_file_create_setup.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Creation",
+                    "description": "Create an archive using 'minitar'",
+                    "command": "./minitar -c -f test.tar gatsby.txt",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/empty.txt",
+                    "points": 0
+                },
+                {
+                    "name": "File Comparison",
+                    "description": "Compare files extracted from archive using 'tar' with the original versions.",
+                    "output_file": "test_cases/output/large_text_file_create_comparison.txt",
+                    "input_file": "test_cases/input/large_text_file_create_comparison.txt",
+                    "points": 1
+                }
+            ],
+            "steps": [
+                [
+                    {
+                        "type": "run",
+                        "target": "File Setup"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Creation"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "File Comparison"
+                    }
+                ]
+            ]
+        },
+        {
+            "type" :"sequence",
+            "name": "Create Archive - Large Binary File",
+            "description": "Creates an archive from a single very large binary file. Uses 'tar' to extract from the new archive and checks that all extracted files match the original versions.",
+            "tests": [
+                {
+                    "name": "File Setup",
+                    "description": "Copies files to be archived into current directory",
+                    "input_file": "test_cases/input/large_binary_file_create_setup.txt",
+                    "output_file": "test_cases/output/large_binary_file_create_setup.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Creation",
+                    "description": "Create an archive using 'minitar'",
+                    "command": "./minitar -c -f test.tar large.bin",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/empty.txt",
+                    "points": 0
+                },
+                {
+                    "name": "File Comparison",
+                    "description": "Compare files extracted from archive using 'tar' with the original versions.",
+                    "output_file": "test_cases/output/large_binary_file_create_comparison.txt",
+                    "input_file": "test_cases/input/large_binary_file_create_comparison.txt",
+                    "points": 1
+                }
+            ],
+            "steps": [
+                [
+                    {
+                        "type": "run",
+                        "target": "File Setup"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Creation"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "File Comparison"
+                    }
+                ]
+            ]
+        },
+        {
+            "type" :"sequence",
+            "name": "Create Archive - Many Files",
+            "description": "Creates an archive from many files, both text and binary. Uses 'tar' to extract from the new archive and checks that all extracted files match the original versions.",
+            "tests": [
+                {
+                    "name": "File Setup",
+                    "description": "Copies files to be archived into current directory",
+                    "input_file": "test_cases/input/many_file_create_setup.txt",
+                    "output_file": "test_cases/output/many_file_create_setup.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Creation",
+                    "description": "Create an archive using 'minitar'",
+                    "command": "./minitar -c -f test.tar hello.txt gatsby.txt f1.txt f1.bin f2.txt f2.bin f3.txt f3.bin f4.txt f4.bin f5.txt f5.bin f6.txt f6.bin f7.txt f7.bin f8.txt f8.bin f9.txt f9.bin f10.txt f10.bin",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/empty.txt",
+                    "points": 0
+                },
+                {
+                    "name": "File Comparison",
+                    "description": "Compare files extracted from archive using 'tar' with the original versions.",
+                    "output_file": "test_cases/output/many_file_create_comparison.txt",
+                    "input_file": "test_cases/input/many_file_create_comparison.txt",
+                    "points": 1
+                }
+            ],
+            "steps": [
+                [
+                    {
+                        "type": "run",
+                        "target": "File Setup"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Creation"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "File Comparison"
+                    }
+                ]
+            ]
+        },
+        {
+            "type" :"sequence",
+            "name": "Append Single File to Archive",
+            "description": "Creates an initial archive from a small number of files. Then appends a single file to that archive. Extracts all files from the archive and checks that they match their original versions.",
+            "tests": [
+                {
+                    "name": "File Setup",
+                    "description": "Copies files to be archived into current directory",
+                    "input_file": "test_cases/input/single_file_append_setup.txt",
+                    "output_file": "test_cases/output/single_file_append_setup.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Creation",
+                    "description": "Create an initial archive using 'minitar'",
+                    "command": "./minitar -c -f test.tar hello.txt f1.bin f2.bin",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/empty.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Append",
+                    "description": "Append to the previously created archive",
+                    "command": "./minitar -a -f test.tar f1.txt",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/empty.txt",
+                    "points": 0
+                },
+                {
+                    "name": "File Comparison",
+                    "description": "Compare files extracted from archive using 'tar' with the original versions.",
+                    "output_file": "test_cases/output/single_file_append_comparison.txt",
+                    "input_file": "test_cases/input/single_file_append_comparison.txt",
+                    "points": 1
+                }
+            ],
+            "steps": [
+                [
+                    {
+                        "type": "run",
+                        "target": "File Setup"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Creation"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Append"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "File Comparison"
+                    }
+                ]
+            ]
+        },
+        {
+            "type" :"sequence",
+            "name": "Append Single Large File to Archive",
+            "description": "Creates an initial archive from a small number of files. Then appends a single large file to that archive. Extracts all files from the archive and checks that they match their original versions.",
+            "tests": [
+                {
+                    "name": "File Setup",
+                    "description": "Copies files to be archived into current directory",
+                    "input_file": "test_cases/input/single_large_file_append_setup.txt",
+                    "output_file": "test_cases/output/single_large_file_append_setup.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Creation",
+                    "description": "Create an initial archive using 'minitar'",
+                    "command": "./minitar -c -f test.tar hello.txt f1.bin f2.bin f1.txt",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/empty.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Append",
+                    "description": "Append to the previously created archive",
+                    "command": "./minitar -a -f test.tar gatsby.txt",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/empty.txt",
+                    "points": 0
+                },
+                {
+                    "name": "File Comparison",
+                    "description": "Compare files extracted from archive using 'tar' with the original versions.",
+                    "output_file": "test_cases/output/single_large_file_append_comparison.txt",
+                    "input_file": "test_cases/input/single_large_file_append_comparison.txt",
+                    "points": 1
+                }
+            ],
+            "steps": [
+                [
+                    {
+                        "type": "run",
+                        "target": "File Setup"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Creation"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Append"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "File Comparison"
+                    }
+                ]
+            ]
+        },
+        {
+            "type" :"sequence",
+            "name": "Append Multiple Files to Archive",
+            "description": "Creates an initial archive from a small number of files. Then appends several more files to that archive. Extracts all files from the archive and checks that they match their original versions.",
+            "tests": [
+                {
+                    "name": "File Setup",
+                    "description": "Copies files to be archived into current directory",
+                    "input_file": "test_cases/input/multi_file_append_setup.txt",
+                    "output_file": "test_cases/output/multi_file_append_setup.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Creation",
+                    "description": "Create an initial archive using 'minitar'",
+                    "command": "./minitar -c -f test.tar hello.txt f1.bin f2.bin f1.txt",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/empty.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Append",
+                    "description": "Append to the previously created archive",
+                    "command": "./minitar -a -f test.tar gatsby.txt f3.txt f3.bin f4.txt f4.bin f5.txt",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/empty.txt",
+                    "points": 0
+                },
+                {
+                    "name": "File Comparison",
+                    "description": "Compare files extracted from archive using 'tar' with the original versions.",
+                    "output_file": "test_cases/output/multi_file_append_comparison.txt",
+                    "input_file": "test_cases/input/multi_file_append_comparison.txt",
+                    "points": 1
+                }
+            ],
+            "steps": [
+                [
+                    {
+                        "type": "run",
+                        "target": "File Setup"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Creation"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Append"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "File Comparison"
+                    }
+                ]
+            ]
+        },
+        {
+            "type" :"sequence",
+            "name": "Single-File Archive List",
+            "description": "Creates a single-file archive, then uses 'minitar' to list the files in that archive.",
+            "tests": [
+                {
+                    "name": "File Setup",
+                    "description": "Copies files to be archived into current directory",
+                    "input_file": "test_cases/input/single_file_list_setup.txt",
+                    "output_file": "test_cases/output/single_file_list_setup.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Creation",
+                    "description": "Create an initial archive using 'minitar'",
+                    "command": "./minitar -c -f test.tar hello.txt ",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/empty.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive List",
+                    "description": "List the files in the previously created archive",
+                    "command": "./minitar -t -f test.tar",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/single_file_archive_list.txt",
+                    "points": 1
+                },
+                {
+                    "name": "File Cleanup",
+                    "description": "Copies files to be archived into current directory",
+                    "input_file": "test_cases/input/single_file_list_cleanup.txt",
+                    "output_file": "test_cases/output/single_file_list_cleanup.txt",
+                    "points": 0
+                }
+            ],
+            "steps": [
+                [
+                    {
+                        "type": "run",
+                        "target": "File Setup"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Creation"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive List"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "File Cleanup"
+                    }
+                ]
+            ]
+        },
+        {
+            "type" :"sequence",
+            "name": "Multi-File Archive List",
+            "description": "Creates a multi-file archive, then uses 'minitar' to list the files in that archive.",
+            "tests": [
+                {
+                    "name": "File Setup",
+                    "description": "Copies files to be archived into current directory",
+                    "input_file": "test_cases/input/multi_file_list_setup.txt",
+                    "output_file": "test_cases/output/multi_file_list_setup.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Creation",
+                    "description": "Create an initial archive using 'minitar'",
+                    "command": "./minitar -c -f test.tar hello.txt f18.txt f20.bin f19.bin f13.txt",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/empty.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive List",
+                    "description": "List the files in the previously created archive",
+                    "command": "./minitar -t -f test.tar",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/multi_file_archive_list.txt",
+                    "points": 1
+                },
+                {
+                    "name": "File Cleanup",
+                    "description": "Removes temporary archive files from the current directory",
+                    "input_file": "test_cases/input/multi_file_list_cleanup.txt",
+                    "output_file": "test_cases/output/multi_file_list_cleanup.txt",
+                    "points": 0
+                }
+            ],
+            "steps": [
+                [
+                    {
+                        "type": "run",
+                        "target": "File Setup"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Creation"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive List"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "File Cleanup"
+                    }
+                ]
+            ]
+        },
+        {
+            "type" :"sequence",
+            "name": "List Before and After Append",
+            "description": "Creates an archive, lists its files, appends more files to the archive, then lists the archive's files a second time.",
+            "tests": [
+                {
+                    "name": "File Setup",
+                    "description": "Copies files to be archived into current directory",
+                    "input_file": "test_cases/input/list_append_list_setup.txt",
+                    "output_file": "test_cases/output/list_append_list_setup.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Creation",
+                    "description": "Create an initial archive using 'minitar'",
+                    "command": "./minitar -c -f test.tar hello.txt f18.txt f20.bin f19.bin f13.txt",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/empty.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive List 1",
+                    "description": "List the files in the previously created archive",
+                    "command": "./minitar -t -f test.tar",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/list_append_list_1.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Append",
+                    "description": "Create an initial archive using 'minitar'",
+                    "command": "./minitar -a -f test.tar gatsby.txt f7.txt f7.bin",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/empty.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive List 2",
+                    "description": "List the files in the previously created archive",
+                    "command": "./minitar -t -f test.tar",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/list_append_list_2.txt",
+                    "points": 1
+                },
+                {
+                    "name": "File Cleanup",
+                    "description": "Remove temporary archive files from the current directory",
+                    "input_file": "test_cases/input/list_append_list_cleanup.txt",
+                    "output_file": "test_cases/output/list_append_list_cleanup.txt",
+                    "points": 0
+                }
+            ],
+            "steps": [
+                [
+                    {
+                        "type": "run",
+                        "target": "File Setup"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Creation"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive List 1"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Append"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive List 2"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "File Cleanup"
+                    }
+                ]
+            ]
+        },
+        {
+            "type" :"sequence",
+            "name": "Update Single file in Archive",
+            "description": "Creates an initial archive, then updates one of the files in that archive. Extracts files from the archive using 'tar', then checks that each extracted file has the correct contents.",
+            "tests": [
+                {
+                    "name": "File Setup",
+                    "description": "Copies files to be archived into current directory",
+                    "input_file": "test_cases/input/single_file_update_setup.txt",
+                    "output_file": "test_cases/output/single_file_update_setup.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Creation",
+                    "description": "Create an initial archive using 'minitar'",
+                    "command": "./minitar -c -f test.tar hello.txt f16.txt f14.bin f11.bin f19.txt",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/empty.txt",
+                    "points": 0
+                },
+                {
+                    "name": "File Modification",
+                    "description": "Change the file 'f11.bin' to a new version with the same contents as the provided file 'f12.bin'.",
+                    "input_file": "test_cases/input/single_file_update_modify.txt",
+                    "output_file": "test_cases/output/single_file_update_modify.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Update",
+                    "description": "Update the archive to contain the new version of 'f11.bin'",
+                    "command": "./minitar -u -f test.tar f11.bin",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/empty.txt",
+                    "points": 0
+                },
+                {
+                    "name": "File Comparison",
+                    "description": "Extract files from the archive with 'tar' and verify that their contents are correct",
+                    "input_file": "test_cases/input/single_file_update_comparison.txt",
+                    "output_file": "test_cases/output/single_file_update_comparison.txt",
+                    "points": 1
+                }
+            ],
+            "steps": [
+                [
+                    {
+                        "type": "run",
+                        "target": "File Setup"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Creation"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "File Modification"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Update"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "File Comparison"
+                    }
+                ]
+            ]
+        },
+        {
+            "type" :"sequence",
+            "name": "Attempt to Update Non-Existent File",
+            "description": "Creates an initial archive, then attempts to update a file that is not actually contained in the archive. Verifies that the expected error message is printed and that the archive stays in its original state.",
+            "tests": [
+                {
+                    "name": "File Setup",
+                    "description": "Copies files to be archived into current directory",
+                    "input_file": "test_cases/input/update_no_exist_setup.txt",
+                    "output_file": "test_cases/output/update_no_exist_setup.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Creation",
+                    "description": "Create an initial archive using 'minitar'",
+                    "command": "./minitar -c -f test.tar hello.txt f16.txt f14.bin f11.bin f19.txt",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/empty.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Update",
+                    "description": "Attempt to apply an update to a file that is not contained in the archive",
+                    "command": "./minitar -u -f test.tar f12.bin",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/update_no_exist.txt",
+                    "points": 0
+                },
+                {
+                    "name": "File Comparison",
+                    "description": "Extract files from the archive with 'tar' and verify that their contents are correct",
+                    "input_file": "test_cases/input/update_no_exist_comparison.txt",
+                    "output_file": "test_cases/output/update_no_exist_comparison.txt",
+                    "points": 1
+                }
+            ],
+            "steps": [
+                [
+                    {
+                        "type": "run",
+                        "target": "File Setup"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Creation"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Update"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "File Comparison"
+                    }
+                ]
+            ]
+        },
+        {
+            "type" :"sequence",
+            "name": "Update Multiple files in Archive",
+            "description": "Creates an initial archive, then updates several files in that archive. Extracts files from the archive using 'tar', then checks that each extracted file has the correct contents.",
+            "tests": [
+                {
+                    "name": "File Setup",
+                    "description": "Copies files to be archived into current directory",
+                    "input_file": "test_cases/input/multi_file_update_setup.txt",
+                    "output_file": "test_cases/output/multi_file_update_setup.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Creation",
+                    "description": "Create an initial archive using 'minitar'",
+                    "command": "./minitar -c -f test.tar f1.txt f3.bin f5.txt f7.bin",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/empty.txt",
+                    "points": 0
+                },
+                {
+                    "name": "File Modification",
+                    "description": "Change several files in current directory to new versions",
+                    "input_file": "test_cases/input/multi_file_update_modify.txt",
+                    "output_file": "test_cases/output/multi_file_update_modify.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Update",
+                    "description": "Update the archive to contain the new file versions",
+                    "command": "./minitar -u -f test.tar f1.txt f5.txt f7.bin",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/empty.txt",
+                    "points": 0
+                },
+                {
+                    "name": "File Comparison",
+                    "description": "Extract files from the archive with 'tar' and verify that their contents are correct",
+                    "input_file": "test_cases/input/multi_file_update_comparison.txt",
+                    "output_file": "test_cases/output/multi_file_update_comparison.txt",
+                    "points": 1
+                }
+            ],
+            "steps": [
+                [
+                    {
+                        "type": "run",
+                        "target": "File Setup"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Creation"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "File Modification"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Update"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "File Comparison"
+                    }
+                ]
+            ]
+        },
+        {
+            "type" :"sequence",
+            "name": "Attempt to Update Multiple Non-Existent Files",
+            "description": "Creates an initial archive, then attempts to update several files, none of which are contained in the archive. Finally verifies that archive remains in initial state.",
+            "tests": [
+                {
+                    "name": "File Setup",
+                    "description": "Copies files to be archived into current directory",
+                    "input_file": "test_cases/input/multi_update_no_exist_setup.txt",
+                    "output_file": "test_cases/output/multi_update_no_exist_setup.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Creation",
+                    "description": "Create an initial archive using 'minitar'",
+                    "command": "./minitar -c -f test.tar f11.txt f13.txt f15.bin f17.bin",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/empty.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Update",
+                    "description": "Attempt to apply an update to files that are not contained in the archive",
+                    "command": "./minitar -u -f test.tar f12.txt f14.txt f15.bin f17.bin",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/update_no_exist.txt",
+                    "points": 0
+                },
+                {
+                    "name": "File Comparison",
+                    "description": "Extract files from the archive with 'tar' and verify that their contents are correct",
+                    "input_file": "test_cases/input/multi_update_no_exist_comparison.txt",
+                    "output_file": "test_cases/output/multi_update_no_exist_comparison.txt",
+                    "points": 1
+                }
+            ],
+            "steps": [
+                [
+                    {
+                        "type": "run",
+                        "target": "File Setup"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Creation"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Update"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "File Comparison"
+                    }
+                ]
+            ]
+        },
+        {
+            "type" :"sequence",
+            "name": "Attempt to Update Existent and Non-existent Files",
+            "description": "Creates an initial archive, then attempts to update several files, some of which are not contained in the archive prompting an error. Finally verifies that archive remains in initial state.",
+            "tests": [
+                {
+                    "name": "File Setup",
+                    "description": "Copies files to be archived into current directory",
+                    "input_file": "test_cases/input/multi_update_mixed_setup.txt",
+                    "output_file": "test_cases/output/multi_update_mixed_setup.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Creation",
+                    "description": "Create an initial archive using 'minitar'",
+                    "command": "./minitar -c -f test.tar large.bin f19.txt f7.bin",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/empty.txt",
+                    "points": 0
+                },
+                {
+                    "name": "Archive Update",
+                    "description": "Attempt to apply an update to a group of files, some of which are not contained in the archive",
+                    "command": "./minitar -u -f test.tar f19.txt f8.bin f9.txt",
+                    "use_valgrind": true,
+                    "output_file": "test_cases/output/update_no_exist.txt",
+                    "points": 0
+                },
+                {
+                    "name": "File Comparison",
+                    "description": "Extract files from the archive with 'tar' and verify that their contents are correct",
+                    "input_file": "test_cases/input/multi_update_mixed_comparison.txt",
+                    "output_file": "test_cases/output/multi_update_mixed_comparison.txt",
+                    "points": 1
+                }
+            ],
+            "steps": [
+                [
+                    {
+                        "type": "run",
+                        "target": "File Setup"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Creation"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "Archive Update"
+                    }
+                ],
+                [
+                    {
+                        "type": "run",
+                        "target": "File Comparison"
+                    }
+                ]
+            ]
+        }
+    ]
+}
